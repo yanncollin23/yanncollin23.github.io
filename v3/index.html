@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="CV de Yann Collin, chargé de communication et community manager dans le Finistère, présenté comme un album vinyle.">
+<meta property="og:title" content="Yann Collin · Bientôt chez vous">
+<meta property="og:description" content="Chargé de communication et community manager dans le Finistère. Un CV en forme de vinyle.">
+<meta property="og:image" content="https://yanncollin23.github.io/v3/og.jpg">
+<meta property="og:url" content="https://yanncollin23.github.io/v3/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex">
+<title>Yann Collin LP</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600;700&family=Permanent+Marker&display=swap">
+<style>
+/* Layout: un album vinyle déplié — recto (pochette + disque), verso sombre (tracklist), livret (notes + crédits), discographie, bonus tracks, bande booking orange, code-barres */
+:root{
+  /* Studio : bois sombre, lumière ambrée, scotch crème, voyant REC, console grise */
+  --bg:#140E0B; --paper:#F4EEDF; --ink:#F3EADB; --muted:#CDBFA8; --line:#3A2A20;
+  --accent:#F2A33A; --accent-fill:#F2A33A; --band-accent:#F2A33A; --accent-ink:#1E1511; --teal:#7FB7A4; --sun:#F2A33A; --rec:#E5372B;
+  --band:#1F1E22; --band-fg:#F3EADB; --band-muted:#B9B2A7; --band-line:#38373C;
+  --vinyl:#0B0A0C; --groove:#232226;
+  --f-display:"Big Shoulders Display",Impact,"Arial Narrow",sans-serif;
+  --f-body:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --f-hand:"Permanent Marker","Comic Sans MS",cursive; --tape:#EFE6CF; --tape-ink:#1E1511;
+  --grain-o:0;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;overflow-x:clip}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:var(--grain-o);mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.inner{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{text-wrap:balance;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.eyebrow{font-family:var(--f-body);font-stretch:125%;font-weight:800;font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+
+/* ── RECTO ─────────────────────────── */
+.recto{padding-block:28px 88px;background:radial-gradient(60% 45% at 22% 48%,rgba(244,182,63,.16),transparent 70%)}
+.topline{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:28px;margin-bottom:44px;border-bottom:1px solid var(--line)}
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:56px;align-items:center}
+.stage{position:relative;aspect-ratio:1.25;width:100%}
+.sleeve{position:absolute;left:0;top:0;width:80%;aspect-ratio:1;background:#2C47C4;overflow:hidden;z-index:2;
+  box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 30px 60px -28px rgba(0,0,0,.55),0 6px 14px -8px rgba(0,0,0,.35)}
+.sleeve img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;
+  filter:none;mix-blend-mode:normal}
+.sleeve::before{display:none;content:"";position:absolute;inset:0;z-index:1;
+  background:radial-gradient(120% 80% at 0% 0%,rgba(255,255,255,.18),transparent 55%),linear-gradient(180deg,transparent 60%,rgba(21,24,43,.4))}
+.sleeve::after{content:"";position:absolute;inset:0;z-index:1;box-shadow:inset 0 0 0 10px rgba(255,244,232,.0),inset 0 0 40px rgba(0,0,0,.18)}
+.s-cat,.s-name,.s-foot{position:absolute;z-index:3;color:var(--accent-ink)}
+.s-cat{top:5%;left:6%;right:6%;display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:clamp(9px,1.2vw,12px);letter-spacing:.16em;text-transform:uppercase}
+.s-name{top:10%;left:6%;font-family:var(--f-display);font-size:clamp(40px,7.4vw,84px);line-height:.86;letter-spacing:-.01em;text-shadow:0 3px 0 rgba(27,26,31,.18)}
+.s-foot{left:6%;right:6%;bottom:5%;display:flex;justify-content:space-between;align-items:flex-end;gap:10px}
+.s-foot span{font-family:var(--f-body);font-stretch:125%;font-weight:800;font-size:clamp(9px,1.2vw,12px);letter-spacing:.18em;text-transform:uppercase}
+.s-sticker{width:clamp(54px,9vw,86px);aspect-ratio:1;border-radius:50%;background:#F4B63F;color:#15182B;display:grid;place-items:center;text-align:center;
+  font-family:var(--f-body);font-stretch:75%;font-weight:900;font-size:clamp(9px,1.25vw,13px);line-height:1.05;text-transform:uppercase;rotate:-12deg;
+  box-shadow:0 4px 10px -4px rgba(0,0,0,.4)}
+
+.disc{position:absolute;top:3.5%;left:22%;width:73%;aspect-ratio:1;border-radius:50%;z-index:1;
+  background:
+    conic-gradient(from 20deg,transparent 0 8%,rgba(255,255,255,.10) 12%,transparent 18% 50%,rgba(255,255,255,.08) 58%,transparent 64%),
+    repeating-radial-gradient(circle,var(--vinyl) 0 1.5px,var(--groove) 1.5px 2.6px);
+  box-shadow:0 20px 40px -20px rgba(0,0,0,.6);
+  transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.disc svg{position:absolute;inset:31%;width:38%;height:38%}
+.playing .disc{transform:translateX(6%);animation:spin 1.8s linear infinite}
+@keyframes spin{to{rotate:360deg}}
+@media (prefers-reduced-motion:reduce){.playing .disc{animation:none}.disc{transition:none}html{scroll-behavior:auto}}
+
+.intro{display:grid;gap:22px;min-width:0}
+.intro h1{font-family:var(--f-body);font-stretch:62%;font-weight:900;font-size:clamp(46px,7vw,88px);line-height:.92;letter-spacing:-.01em;text-transform:uppercase}
+.intro h1 em{font-family:var(--f-display);font-style:normal;font-weight:400;text-transform:none;color:var(--accent);font-size:.9em;letter-spacing:0;display:inline-block;rotate:-3deg}
+.intro p{margin:0;max-width:46ch;font-size:18px;color:var(--ink)}
+.facts{display:flex;flex-wrap:wrap;gap:14px;padding-block:6px}
+.facts div{width:118px;aspect-ratio:1;border-radius:50%;display:grid;place-content:center;text-align:center;padding:12px;rotate:-5deg;box-shadow:0 10px 18px -12px rgba(0,0,0,.6);transition:rotate .3s,translate .3s}
+.facts div:hover{rotate:0deg;translate:0 -3px}
+.facts div:nth-child(1){background:#F2A33A;color:#1E1511}
+.facts div:nth-child(2){background:#EFE6CF;color:#1E1511;rotate:4deg}
+.facts div:nth-child(3){background:#7FB7A4;color:#1E1511;rotate:-2deg}
+.facts b{display:block;font-family:var(--f-display);font-weight:400;font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
+.facts span{font-size:12px;line-height:1.2;font-weight:600;margin-top:4px}
+.scribble{font-family:var(--f-hand);font-size:19px;color:var(--accent);rotate:-3deg;margin:-6px 0 0;transform-origin:left}
+.tape{display:inline-block;font-family:var(--f-hand);font-size:17px;line-height:1.2;color:var(--tape-ink);background:var(--tape);padding:5px 14px 4px;rotate:-2deg;box-shadow:0 4px 10px -6px rgba(0,0,0,.5);margin-bottom:12px}
+.actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.play{display:inline-flex;align-items:center;gap:12px;border:0;cursor:pointer;background:var(--accent-fill);color:var(--accent-ink);
+  font:800 15px var(--f-body);font-stretch:110%;padding:14px 22px 14px 16px;border-radius:99px;box-shadow:0 10px 20px -12px rgba(242,163,58,.9);transition:translate .2s}
+.play:hover{translate:0 -2px}
+.play .ic{width:26px;height:26px;border-radius:50%;background:var(--accent-ink);display:grid;place-items:center}
+.play .ic::before{content:"";width:0;height:0;border-left:8px solid var(--accent-fill);border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px}
+.playing .play .ic::before{width:8px;height:10px;border:0;border-left:3px solid var(--accent-fill);border-right:3px solid var(--accent-fill);margin:0}
+.ghost{font:700 15px var(--f-body);text-decoration:none;border-bottom:2px solid var(--ink);padding-bottom:2px}
+.ghost:hover{border-color:var(--accent)}
+
+.np{display:flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;color:var(--muted)}
+.eq{display:inline-flex;align-items:flex-end;gap:2px;height:14px}
+.eq i{width:3px;background:var(--accent);height:30%;animation:eq .9s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:-.3s}.eq i:nth-child(3){animation-delay:-.6s}.eq i:nth-child(4){animation-delay:-.15s}
+@keyframes eq{0%,100%{height:25%}50%{height:100%}}
+@media (prefers-reduced-motion:reduce){.eq i{animation:none;height:60%}}
+.player{border-radius:12px;overflow:hidden;min-height:80px;max-width:100%}
+.player iframe{display:block;border:0}
+.sound-hint{margin:-8px 0 0!important;font-size:13px!important;color:var(--muted)!important}
+.playing .sound-hint{display:none}
+
+/* ── VERSO (tracklist) ─────────────── */
+.verso{background:repeating-radial-gradient(circle at 105% -15%,transparent 0 7px,rgba(255,255,255,.03) 7px 8px),var(--band);color:var(--band-fg);padding-block:80px 88px}
+.verso .mono{color:var(--band-muted)}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+.sec-head h2{font-family:var(--f-display);font-weight:400;font-size:clamp(44px,7vw,84px);line-height:1}
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.side{min-width:0;position:relative}
+.side-head{display:flex;align-items:center;gap:18px;margin-bottom:10px}
+.side-letter{font-family:var(--f-display);font-size:40px;line-height:1;color:#15182B;background:var(--band-accent);width:76px;height:76px;border-radius:50%;display:grid;place-items:center;flex:none;box-shadow:0 0 0 6px var(--band),0 0 0 7px var(--band-line),0 0 0 14px var(--band),0 0 0 15px var(--band-line)}
+.side-head h3{font-family:var(--f-body);font-stretch:125%;font-weight:800;font-size:15px;letter-spacing:.2em;text-transform:uppercase}
+.side-head p{margin:2px 0 0;font-size:14px;color:var(--band-muted)}
+ol.tracks{list-style:none;margin:0;padding:0;border-top:1px solid var(--band-line)}
+.track{border-bottom:1px solid var(--band-line)}
+.track button{all:unset;cursor:pointer;box-sizing:border-box;display:grid;grid-template-columns:40px minmax(0,auto) minmax(16px,1fr) auto;gap:12px;align-items:baseline;width:100%;padding:16px 8px 16px 0;transition:background .2s,padding .2s}
+.track button:hover{background:rgba(255,255,255,.04);padding-left:8px}
+.track button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.no{font-family:var(--f-mono);color:var(--band-accent);font-size:13px;font-weight:500}
+.tt{font-weight:700;font-size:17px;line-height:1.3;min-width:0}
+.tt small{display:block;font-weight:400;font-size:14px;color:var(--band-muted);margin-top:2px}
+.lead{border-bottom:1px dotted var(--band-line);transform:translateY(-5px)}
+.yr{font-family:var(--f-mono);font-size:13px;color:var(--band-fg);font-variant-numeric:tabular-nums;white-space:nowrap}
+.notes{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.notes>div{overflow:hidden}
+.notes ul{margin:0;padding:0 0 18px 52px;list-style:none;display:grid;gap:6px;font-size:15px;color:var(--band-fg)}
+.notes li{position:relative;padding-left:16px}
+.notes li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--band-accent)}
+.track[data-open="true"] .notes{grid-template-rows:1fr}
+.chev{display:inline-block;margin-left:8px;color:var(--band-muted);font-weight:400;transition:rotate .25s}
+.track[data-open="true"] .chev{rotate:45deg;color:var(--band-accent)}
+
+/* ── LIVRET ─────────────────────────── */
+.livret{padding-block:88px}
+.livret .sec-head h2{color:var(--ink)}
+.liner{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:56px;align-items:start}
+.liner-text{columns:2 240px;column-gap:32px}
+.liner-text p{margin:0 0 14px;break-inside:avoid}
+.liner-text p:first-child::first-letter{font-family:var(--f-display);float:left;font-size:64px;line-height:.8;padding:6px 10px 0 0;color:var(--accent)}
+.credits{background:var(--paper);border:1px solid var(--line);padding:26px 26px 22px;position:relative}
+.credits .corner{position:absolute;top:-12px;right:28px;width:92px;height:24px;background:var(--tape);opacity:.9;rotate:6deg;box-shadow:0 3px 8px -5px rgba(0,0,0,.5)}
+.credits::before{content:"";position:absolute;inset:6px;border:1px solid var(--line);pointer-events:none}
+.credits .eyebrow{margin-bottom:14px;color:var(--accent)}
+.cr{display:grid;grid-template-columns:auto minmax(16px,1fr) minmax(0,auto);gap:10px;align-items:baseline;padding:7px 0}
+.cr dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cr i{border-bottom:1px dotted var(--line);transform:translateY(-4px)}
+.cr dd{margin:0;font-weight:600;font-size:15px;text-align:right;max-width:26ch}
+.credits dl{margin:0}
+.toeic{display:flex;align-items:center;gap:10px;justify-content:flex-end;margin-top:4px}
+.bar{width:110px;height:5px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar b{display:block;height:100%;width:88.9%;background:var(--teal)}
+.toeic span{font-family:var(--f-mono);font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* ── DISCOGRAPHIE ───────────────────── */
+.disco-wrap{padding-block:0 88px}
+.disco{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.rec{display:grid;gap:12px;align-content:start;min-width:0}
+.cover{aspect-ratio:1;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:12px;
+  box-shadow:0 18px 30px -22px rgba(0,0,0,.55);transition:translate .3s,rotate .3s}
+.rec:hover .cover{translate:0 -4px;rotate:-1.5deg}
+.cover .yr2{position:relative;z-index:1;font-family:var(--f-body);font-stretch:62%;font-weight:900;font-size:clamp(34px,4.6vw,52px);line-height:.85}
+.cover .lbl{position:relative;z-index:1;font-family:var(--f-mono);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase}
+.c1{background:#2A1C14;color:#F2A33A}
+.c1::before{content:"";position:absolute;inset:0;background:repeating-radial-gradient(circle at 100% 100%,transparent 0 10px,rgba(242,163,58,.28) 10px 12px)}
+.c2{background:#B52B1C;color:#FFF3E6}
+.c2::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 14px,rgba(255,244,232,.14) 14px 28px)}
+.c3{background:#2B2A2E;color:#F3EADB}
+.c3::before{content:"";position:absolute;inset:0;background:conic-gradient(from 0deg at 50% 120%,rgba(255,255,255,.14) 0 10deg,transparent 10deg 20deg) ;background-size:100% 100%}
+.c3::after{content:"";position:absolute;right:-38%;bottom:-38%;width:70%;aspect-ratio:1;border-radius:50%;background:#7FB7A4;opacity:.95}
+.c4{background:#F2A33A;color:#1E1511}
+.c4::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(30,21,17,.3) 1.4px,transparent 1.6px);background-size:12px 12px}
+.rec b{display:block;font-size:15px;line-height:1.3}
+.rec span{display:block;font-size:14px;color:var(--ink);opacity:.85}
+.rec .cover span{color:inherit;opacity:1}
+
+/* ── BONUS TRACKS ───────────────────── */
+.bonus{padding-block:0 96px}
+.bonus-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.bt{position:relative;background:var(--paper);border:1px solid var(--line);padding:26px 20px 20px;min-width:0;display:grid;gap:6px;align-content:start;transition:border-color .2s,translate .2s}
+.bt:nth-child(odd){rotate:-.6deg}.bt:nth-child(even){rotate:.5deg}
+.bt::before{content:"";position:absolute;top:-11px;left:50%;translate:-50% 0;width:74px;height:22px;background:var(--tape);opacity:.92;rotate:-3deg;box-shadow:0 3px 8px -5px rgba(0,0,0,.5)}
+.bt:hover{border-color:var(--accent);translate:0 -2px}
+.bt .no{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.bt b{font-family:var(--f-display);font-weight:400;font-size:26px;line-height:1.1}
+.bt .role{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.bt p{margin:6px 0 0;font-size:15px}
+.bt-feature{grid-column:span 2;background:var(--band);color:var(--band-fg);border-color:var(--band)}
+.bt-feature .role{color:var(--band-muted)}
+.bt-wide{grid-column:1/-1}
+.bt-feature a{justify-self:start;margin-top:8px;font:700 14px var(--f-body);text-decoration:none;color:var(--band-fg);border-bottom:2px solid var(--band-accent);padding-bottom:2px}
+
+/* ── BOOKING ────────────────────────── */
+.booking{background:var(--accent-fill);color:var(--accent-ink);padding-block:72px}
+.ticket{position:relative;background:#F4EEDF;color:#1E1511;padding:44px;border-radius:6px;box-shadow:0 30px 50px -30px rgba(0,0,0,.6)}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:40px;height:40px;margin-top:-20px;border-radius:50%;background:var(--accent-fill)}
+.ticket::before{left:-20px}.ticket::after{right:-20px}
+.ticket>div:first-child{border-right:3px dashed #CDBFA8;padding-right:40px}
+.booking .ticket .eyebrow{color:#A8321C}
+.booking .ticket .c-row{border-color:#CDBFA8}
+.booking .ticket .copy{background:#1E1511;color:#F3EADB}
+.booking .ticket .copy:hover{background:#3A2A20}
+.booking .grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center}
+.booking h2{font-family:var(--f-display);font-weight:400;font-size:clamp(40px,6vw,72px);line-height:.95}
+.booking p{margin:16px 0 0;max-width:44ch;font-size:17px}
+.booking .eyebrow{margin-bottom:14px}
+.contact{display:grid;gap:10px}
+.c-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border:1px solid rgba(255,244,232,.45);padding:14px 16px}
+.c-row .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;width:52px}
+.c-row .v{font-weight:800;font-size:17px;user-select:all;min-width:0;overflow-wrap:anywhere;flex:1}
+.copy{border:0;background:var(--accent-ink);color:#C23A1C;font:600 12px var(--f-mono);padding:6px 12px;border-radius:99px;cursor:pointer}
+.copy:hover{background:#FFFFFF}
+
+/* ── FOOTER ─────────────────────────── */
+footer{padding-block:28px 40px}
+footer .inner{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.barcode{display:grid;gap:4px;justify-items:start}
+.barcode i{display:block;width:150px;height:44px;
+  background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 8px,var(--ink) 8px 11px,transparent 11px 12px,var(--ink) 12px 13px,transparent 13px 16px)}
+.barcode span{font-family:var(--f-mono);font-size:11px;letter-spacing:.3em;color:var(--ink)}
+.foot-r{display:grid;gap:4px;text-align:right}
+.foot-r a{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--accent)}
+
+@media (max-width:820px){
+  .hero,.sides,.liner,.booking .grid{grid-template-columns:1fr}
+  .ticket{padding:32px 24px}
+  .ticket>div:first-child{border-right:0;border-bottom:3px dashed #D3D4CC;padding:0 0 28px}
+  .ticket::before,.ticket::after{top:auto;bottom:-20px;display:none}
+  .hero{gap:36px}
+  .sides{gap:48px}
+  .bonus-list{grid-template-columns:1fr}
+  .bt-feature{grid-column:auto}
+  .disco{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .notes ul{padding-left:0}
+  .verso,.livret{padding-block:56px}
+  .disco-wrap,.bonus{padding-block:0 64px}
+  .foot-r{text-align:left}
+}
+@media (max-width:460px){
+  .facts b{font-size:24px}
+  .track button{grid-template-columns:34px minmax(0,1fr) auto}
+  .lead{display:none}
+  .side-letter{font-size:30px;width:58px;height:58px}
+}
+
+/* ── V3 : typographies et matières du studio ── */
+.recto{background:radial-gradient(55% 45% at 24% 45%,rgba(242,163,58,.22),transparent 70%),repeating-linear-gradient(90deg,#2A1C14 0 38px,#24170F 38px 40px)}
+.topline{border-color:#4A3628}
+.intro h1{font-family:var(--f-display);font-stretch:normal;font-weight:900;font-size:clamp(48px,7vw,96px);line-height:.86;letter-spacing:0;overflow-wrap:break-word}
+.intro h1 em{font-family:var(--f-hand);font-weight:400;text-transform:none;color:var(--accent);font-size:.62em;rotate:-4deg}
+.intro p{color:#E6D9C4}
+.eyebrow{font-family:var(--f-mono);font-stretch:normal;font-weight:600;letter-spacing:.16em}
+.facts b{font-family:var(--f-display);font-weight:900;font-size:34px}
+.sec-head h2,.booking h2,.bt b{font-family:var(--f-display);font-weight:900;text-transform:uppercase;letter-spacing:.005em}
+.sec-head h2{font-size:clamp(40px,9vw,96px);line-height:.88;overflow-wrap:break-word}
+.sec-head>div{min-width:0;max-width:100%}
+.booking h2{font-size:clamp(40px,5.6vw,76px);line-height:.88}
+.bt b{font-size:30px;line-height:1}
+.side-letter{font-family:var(--f-display);font-weight:900;color:#1E1511}
+.side-head h3{font-family:var(--f-mono);font-stretch:normal;font-weight:600}
+.cover .yr2{font-family:var(--f-display);font-stretch:normal;font-weight:900}
+.liner-text p:first-child::first-letter{font-family:var(--f-display);font-weight:900;color:var(--accent)}
+.verso{background:repeating-radial-gradient(circle at 105% -15%,transparent 0 7px,rgba(255,255,255,.025) 7px 8px),#1F1E22;border-top:6px solid #0B0A0C}
+.livret,.disco-wrap,.bonus{background:var(--bg)}
+.credits,.bt{--ink:#1E1511;--muted:#5B4E3E;--line:#CDBFA8;color:var(--ink)}
+.credits .eyebrow{color:#A8321C}
+.bt .no{color:#A8321C}
+.bt-feature{--ink:#F3EADB;background:#1F1E22;color:#F3EADB;border-color:#38373C}
+.bt-feature .no{color:var(--accent)}
+.play{font-family:var(--f-mono);font-stretch:normal;font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:13px;border-radius:2px}
+.ghost{border-color:var(--accent)}
+.np{color:var(--muted)}
+.rec-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--rec);box-shadow:0 0 10px var(--rec);margin-right:8px;vertical-align:1px}
+.booking{color:var(--accent-ink)}
+.booking .ticket h2{color:#1E1511}
+footer{background:#0E0A08}
+.barcode i{background:repeating-linear-gradient(90deg,#F3EADB 0 2px,transparent 2px 4px,#F3EADB 4px 5px,transparent 5px 8px,#F3EADB 8px 11px,transparent 11px 12px,#F3EADB 12px 13px,transparent 13px 16px)}
+.barcode span{color:#F3EADB}
+
+/* ── RÉALISATIONS ── */
+.works{padding-block:88px;background:#0E0A08;border-top:1px solid #3A2A20}
+.works-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;align-items:start}
+.works-side{display:grid;gap:28px}
+.work{display:grid;gap:14px;color:var(--ink);text-decoration:none}
+.screen{position:relative;aspect-ratio:16/9;background:#0B0807;border:1px solid #3A2A20;padding:12px 12px 36px;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.screen-in{position:relative;width:100%;height:100%;overflow:hidden;background:repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 2px,transparent 2px 4px),radial-gradient(70% 70% at 50% 40%,#3A2A20,#140E0B);display:grid;place-items:center}
+.screen-in img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:sepia(.25) contrast(1.05)}
+.screen-in .ttl{position:absolute;left:16px;bottom:12px;font-family:var(--f-display);font-weight:900;font-size:clamp(26px,3.4vw,44px);line-height:.9;text-transform:uppercase;color:var(--ink);text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.playbtn{position:absolute;z-index:2;left:50%;top:50%;translate:-50% -50%;width:74px;height:74px;border-radius:50%;background:var(--accent);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.6);transition:scale .2s}
+.playbtn::before{content:"";border-left:22px solid #1E1511;border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
+.work:hover .playbtn{scale:1.08}
+.work:focus-visible .screen{outline:2px solid var(--accent);outline-offset:4px}
+.screen-bar{position:absolute;left:12px;right:12px;bottom:10px;display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;color:var(--accent)}
+.work h3{margin:0;font-family:var(--f-display);font-weight:900;font-size:clamp(28px,3vw,38px);line-height:.95;text-transform:uppercase}
+.work .meta{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.work p{margin:0;max-width:60ch;color:#E6D9C4}
+.work .go{font-weight:700;color:var(--accent);border-bottom:2px solid var(--accent);justify-self:start;padding-bottom:2px}
+.roles{display:flex;flex-wrap:wrap;gap:8px}
+.roles span{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;color:#1E1511;background:var(--tape);padding:4px 10px}
+.mini-card{background:#1F1E22;border:1px solid #38373C;padding:22px;display:grid;gap:10px;color:var(--ink);text-decoration:none}
+.mini-card:hover{border-color:var(--accent)}
+@media (max-width:820px){.works-grid{grid-template-columns:1fr}.works{padding-block:56px}}
+
+.ills{margin-top:72px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.6fr);gap:32px;align-items:start}
+.ills-head h3{margin:0;font-family:var(--f-display);font-weight:900;font-size:clamp(30px,3vw,44px);line-height:.9;text-transform:uppercase;overflow-wrap:break-word}
+.ills-head{min-width:0}
+.ills-head p{margin:12px 0 0;color:#E6D9C4;max-width:32ch}
+.ills-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.ill{grid-column:span 2}
+.ill:nth-child(-n+2){grid-column:span 3}
+.ill{margin:0;position:relative;aspect-ratio:1;background:#1F1E22;border:1px solid #38373C;overflow:hidden}
+.ill img{width:100%;height:100%;object-fit:cover;display:block;transition:scale .4s}
+.ill:hover img{scale:1.05}
+.ill figcaption{position:absolute;left:0;right:0;bottom:0;padding:8px 10px;font-family:var(--f-mono);font-size:12px;color:#1E1511;background:var(--tape);translate:0 100%;transition:translate .25s}
+.ill:hover figcaption,.ill.off figcaption{translate:0 0}
+.ill.off img{display:none}
+@media (max-width:820px){.ills{grid-template-columns:1fr}.ills-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ill,.ill:nth-child(-n+2){grid-column:auto}.ill:first-child{grid-column:1/-1}}
+
+.poster-frame{background:#0B0807;border:1px solid #3A2A20;padding:12px;box-shadow:0 30px 60px -30px rgba(0,0,0,.8);rotate:1deg;transition:rotate .3s}
+.poster:hover .poster-frame{rotate:0deg}
+.poster-frame img{display:block;width:100%;height:auto}
+.works-row{margin-top:28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+@media (max-width:820px){.works-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<section class="recto" id="top">
+  <div class="inner">
+    <div class="topline"><span class="mono"><span class="rec-dot" aria-hidden="true"></span>Rec · YC-029 · Stéréo · 33⅓ tr/min</span><span class="mono">Plougonvelin, Finistère</span></div>
+    <header class="hero" id="hero">
+      <div class="stage" aria-hidden="true">
+        <div class="disc">
+          <svg viewBox="0 0 100 100">
+            <defs><path id="ring" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"/></defs>
+            <circle cx="50" cy="50" r="50" fill="#E5372B"/>
+            <circle cx="50" cy="50" r="27" fill="none" stroke="#FFF4E8" stroke-opacity=".35" stroke-width=".6"/>
+            <text font-family="DM Mono, monospace" font-size="7.4" letter-spacing="1.6" fill="#FFF4E8"><textPath href="#ring">YANN COLLIN · FACE A COMMUNICATION · FACE B TERRAIN ·</textPath></text>
+            <text x="50" y="57" text-anchor="middle" font-family="Shrikhand, Georgia, serif" font-size="20" fill="#F4B63F">YC</text>
+            <circle cx="50" cy="50" r="2.4" fill="#131216"/>
+          </svg>
+        </div>
+        <div class="sleeve">
+          <img src="pochette.jpg" alt="Pochette « Bientôt chez vous » de Yann Collin" width="900" height="900">
+        </div>
+      </div>
+      <div class="intro">
+        <div class="eyebrow" style="color:var(--accent)">Chargé de communication · Community manager</div>
+        <h1>Un parcours en <em>deux faces</em></h1>
+        <p>Face A, la communication : réseaux sociaux, contenus, vidéo, stratégie. Face B, le terrain : le contact client au quotidien. Les deux se répondent, comme un bon album.</p>
+        <div class="facts">
+          <div><b>5 ans</b><span>d'expérience en com</span></div>
+          <div><b>880</b><span>au TOEIC 2025</span></div>
+          <div><b>Bac+5</b><span>Mastère 2025</span></div>
+        </div>
+        <div class="actions">
+          <button class="play" id="play" type="button" aria-pressed="false"><span class="ic"></span><span id="playLabel">Poser le disque</span></button>
+          <a class="ghost" href="#booking">Me contacter</a>
+        </div>
+        <p class="scribble">↑ posez le disque, il joue vraiment</p>
+        <div class="np" id="nowplaying" hidden><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>En lecture · « Night Moves », Bob Seger</span></div>
+        <div class="player"><div id="spotify-player"><a href="https://open.spotify.com/track/0jpWrtIu1w79yAOy0oJeiR" target="_blank" rel="noopener">Écouter « Night Moves » de Bob Seger sur Spotify</a></div></div>
+        <p class="sound-hint">Le disque joue via Spotify : extrait de 30 secondes sans compte, morceau complet si vous êtes connecté.</p>
+      </div>
+    </header>
+  </div>
+</section>
+
+<section class="verso" id="tracklist" aria-labelledby="tl-h">
+  <div class="inner">
+    <div class="sec-head"><div><span class="tape">Faces A &amp; B</span><h2 id="tl-h">Tracklist</h2></div><span class="mono">Expériences · touchez un titre pour les notes</span></div>
+    <div class="sides">
+      <div class="side">
+        <div class="side-head"><span class="side-letter" aria-hidden="true">A</span><div><h3>Communication</h3><p>De l'agence au média en ligne, jusqu'à l'industrie.</p></div></div>
+        <ol class="tracks">
+          <li class="track" data-open="true"><button type="button" aria-expanded="true"><span class="no">A1</span><span class="tt">Chargé de communication<span class="chev">+</span><small>Alstef Group · alternance</small></span><span class="lead"></span><span class="yr">2023–25</span></button>
+            <div class="notes"><div><ul><li>Communication interne</li><li>Contenus pour les réseaux sociaux : photos, vidéos, montages</li><li>Reporting statistique</li><li>Veille informationnelle et concurrentielle</li><li>Stratégie et plan de communication</li></ul></div></div></li>
+          <li class="track" data-open="false"><button type="button" aria-expanded="false"><span class="no">A2</span><span class="tt">Community manager<span class="chev">+</span><small>Ecookie · Hitek.fr, Trolls de Geek</small></span><span class="lead"></span><span class="yr">2021–23</span></button>
+            <div class="notes"><div><ul><li>Animation des pages Facebook de Hitek.fr et Trolls de Geek</li><li>Création et partage de contenus</li><li>Publication des articles des journalistes</li><li>Modération et veille informationnelle</li><li>Visuels pour la boutique en ligne store.hitek.fr</li></ul></div></div></li>
+          <li class="track" data-open="false"><button type="button" aria-expanded="false"><span class="no">A3</span><span class="tt">Responsable communication<span class="chev">+</span><small>Gold Digger, agence Hungry Nuggets · Belgique</small></span><span class="lead"></span><span class="yr">2021</span></button>
+            <div class="notes"><div><ul><li>Production intégrale d'une web-série : concept, recherches, écriture des textes, tournage, post-production et diffusion</li><li>Branding de l'agence</li><li>Création de contenus web et web design</li><li>Stratégie de collecte de données et SEO</li><li>Community management</li></ul></div></div></li>
+          <li class="track" data-open="false"><button type="button" aria-expanded="false"><span class="no">A4</span><span class="tt">Assistant du dir. de la com<span class="chev">+</span><small>Zéphyr Conseil et Communication, Nantes</small></span><span class="lead"></span><span class="yr">2017 · 19</span></button>
+            <div class="notes"><div><ul><li>Deux stages en communication territoriale : mai–juillet 2017 et mars–juillet 2019</li><li>Participation à l'élaboration des stratégies et gestion de projets</li><li>Lien avec les clients et les fournisseurs</li><li>Réalisation de supports de communication</li><li>Recherche documentaire et iconographique</li></ul></div></div></li>
+          <li class="track" data-open="false"><button type="button" aria-expanded="false"><span class="no">A5</span><span class="tt">Stagiaire communication<span class="chev">+</span><small>Agence Focalys, Nancy</small></span><span class="lead"></span><span class="yr">2018</span></button>
+            <div class="notes"><div><ul><li>Premier stage en agence, de janvier à février 2018</li></ul></div></div></li>
+        </ol>
+      </div>
+      <div class="side">
+        <div class="side-head"><span class="side-letter" aria-hidden="true">B</span><div><h3>Terrain</h3><p>Le contact client, en direct et sans filet.</p></div></div>
+        <ol class="tracks">
+          <li class="track" data-open="true"><button type="button" aria-expanded="true"><span class="no">B1</span><span class="tt">Vente en boulangerie<span class="chev">+</span><small>Boulangerie &amp; salon de thé</small></span><span class="lead"></span><span class="yr">Vente</span></button>
+            <div class="notes"><div><ul><li>Accueil et conseil des clients au comptoir</li><li>Encaissement et mise en valeur des produits</li><li>Gestion des pics d'affluence avec le sourire</li></ul></div></div></li>
+          <li class="track" data-open="false"><button type="button" aria-expanded="false"><span class="no">B2</span><span class="tt">Vendeur polyvalent<span class="chev">+</span><small>La Trinitaine · biscuiterie bretonne</small></span><span class="lead"></span><span class="yr">2019–20</span></button>
+            <div class="notes"><div><ul><li>Vente en magasin de novembre 2019 à mars 2020, y compris la période des fêtes</li><li>Conseil client, encaissement, mise en rayon</li></ul></div></div></li>
+          <li class="track" data-open="false"><button type="button" aria-expanded="false"><span class="no">B3</span><span class="tt">Équipier polyvalent<span class="chev">+</span><small>McDonald's · restauration rapide</small></span><span class="lead"></span><span class="yr">2018</span></button>
+            <div class="notes"><div><ul><li>Caisse, production et service, de février à juin 2018</li><li>Travail en équipe à rythme soutenu</li></ul></div></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="works" id="realisations" aria-labelledby="wk-h">
+  <div class="inner">
+    <div class="sec-head"><div><span class="tape">Sessions enregistrées</span><h2 id="wk-h">Réalisations</h2></div><span class="mono">Ce que j'ai produit · cliquez pour voir</span></div>
+    <div class="works-grid">
+      <a class="work" href="https://www.youtube.com/watch?v=TOiIVn3VWuw" target="_blank" rel="noopener">
+        <div class="screen">
+          <div class="screen-in">
+            <img src="https://i.ytimg.com/vi/TOiIVn3VWuw/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
+            <span class="ttl">Le Filon</span>
+            <span class="playbtn" aria-hidden="true"></span>
+          </div>
+          <div class="screen-bar"><span>WEB-SÉRIE · ÉP. 3</span><span>3:59</span></div>
+        </div>
+        <span class="meta">Hungry Nuggets · Belgique · mars 2021</span>
+        <h3>Le Filon #3 : le marketing d'influence, solution miracle ?</h3>
+        <p>Une web-série de conseils marketing pour les entrepreneurs, produite de A à Z pendant mon stage. Cet épisode explique qui sont les influenceurs et comment une marque peut travailler avec eux et leurs communautés.</p>
+        <div class="roles"><span>Concept</span><span>Recherches</span><span>Écriture</span><span>Tournage</span><span>Montage</span><span>Diffusion</span></div>
+        <span class="go">Voir l'épisode sur YouTube</span>
+      </a>
+      <a class="work poster" href="affiche-noel.jpg" target="_blank" rel="noopener">
+        <div class="poster-frame"><img src="affiche-noel.jpg" alt="Affiche de l'arbre de Noël du CSE d'Alstef Group : un Père Noël rock en lunettes de soleil, vendredi 13 décembre à L'Antichambre, Mordelles" width="779" height="1100" loading="lazy"></div>
+        <span class="meta">Alstef Group · CSE · décembre 2024</span>
+        <h3>Affiche de l'arbre de Noël</h3>
+        <p>Affiche de l'arbre de Noël organisé par le CSE, avec un groupe de rock sur scène. Un Père Noël rockeur pour donner le ton de la soirée.</p>
+        <div class="roles"><span>Concept</span><span>Direction artistique</span><span>Mise en page</span></div>
+        <span class="go">Voir l'affiche en grand</span>
+      </a>
+    </div>
+    <div class="works-row">
+        <a class="mini-card" href="https://riffsetlegendes.github.io" target="_blank" rel="noopener">
+          <span class="meta" style="font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)">Projet perso · site + Instagram</span>
+          <b style="font-family:var(--f-display);font-weight:900;font-size:32px;line-height:.95;text-transform:uppercase">Riffs &amp; Légendes</b>
+          <span style="color:#E6D9C4">Un média rock : une publication par jour autour des anniversaires d'artistes, d'albums et de concerts mythiques. Ligne éditoriale, carrousels Instagram, production assistée par l'IA.</span>
+          <span class="go" style="font-weight:700;color:var(--accent)">Visiter le site</span>
+        </a>
+        <a class="mini-card" href="#top">
+          <span style="font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)">Ce site · concept &amp; DA</span>
+          <b style="font-family:var(--f-display);font-weight:900;font-size:32px;line-height:.95;text-transform:uppercase">Ce CV en vinyle</b>
+          <span style="color:#E6D9C4">Concept, direction artistique, textes et pochette « Bientôt chez vous » créée avec l'IA générative. Un CV pensé comme un album, de la pochette au billet de concert.</span>
+          <span class="go" style="font-weight:700;color:var(--accent)">Remonter à la pochette</span>
+        </a>
+    </div>
+
+    <div class="ills">
+      <div class="ills-head"><span class="tape">Face cachée</span><h3>Illustrations</h3><p>Des aplats de couleur, entre surf, glisse et côte bretonne : mon terrain de jeu graphique.</p></div>
+      <div class="ills-grid"><figure class="ill"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;0;0;0,width=800,height=800/image/131599875/a256f890-bfb8-4f15-a946-38ae47953288.jpg" alt="Illustration : Surfeur dans une vague" loading="lazy" onerror="this.closest('.ill').classList.add('off')"><figcaption>Surfeur dans une vague</figcaption></figure><figure class="ill"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;0;0;0,width=800,height=800/image/131604639/18c8dc5a-4921-417f-952e-177059f3cd1c.jpg" alt="Illustration : Skateur en plein saut" loading="lazy" onerror="this.closest('.ill').classList.add('off')"><figcaption>Skateur en plein saut</figcaption></figure><figure class="ill"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;0;0;0,width=800,height=800/image/131599926/c8b74c4e-fec8-4d37-8fe8-c32b2a476d45.jpg" alt="Illustration : Rochers et écume sur la côte" loading="lazy" onerror="this.closest('.ill').classList.add('off')"><figcaption>Rochers et écume sur la côte</figcaption></figure><figure class="ill"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;0;0;0,width=800,height=800/image/131600235/d1e3959d-212f-4248-a872-061b0f7ed01f.jpg" alt="Illustration : Vagues sur les rochers" loading="lazy" onerror="this.closest('.ill').classList.add('off')"><figcaption>Vagues sur les rochers</figcaption></figure><figure class="ill"><img src="https://storage.e.jimdo.com/cdn-cgi/image/quality=85,fit=scale-down,format=auto,trim=0;0;0;0,width=800,height=800/image/131600641/f36f4a5d-2c01-4a66-9cab-d826b15ee5a1.jpg" alt="Illustration : Promeneuse face à la mer" loading="lazy" onerror="this.closest('.ill').classList.add('off')"><figcaption>Promeneuse face à la mer</figcaption></figure></div>
+    </div>
+  </div>
+</section>
+
+<section class="livret" id="notes" aria-labelledby="ln-h">
+  <div class="inner">
+    <div class="sec-head"><div><span class="tape">Livret intérieur</span><h2 id="ln-h">Notes de pochette</h2></div><span class="mono">Livret intérieur</span></div>
+    <div class="liner">
+      <div class="liner-text">
+        <p>J'ai 28 ans et je vis à Plougonvelin, au bout du Finistère. J'ai appris la communication en stage, puis sur un média en ligne suivi par une large communauté, puis pendant deux ans d'alternance dans un groupe industriel.</p>
+        <p>J'ai appris la vente derrière un comptoir, face aux clients. Ce mélange me donne une façon de travailler simple : comprendre ce que la personne en face attend, puis trouver les bons mots pour y répondre.</p>
+        <p>Que ce soit dans une vidéo pour les réseaux sociaux ou au moment de conseiller un client en magasin, le principe reste le même.</p>
+        <p>Mes anciens professeurs et responsables retiennent de moi trois choses : l'adaptation aux autres, la créativité et le dynamisme. J'y ajouterai l'esprit d'équipe que le rugby m'a enseigné.</p>
+        <p>Hors studio, je suis un passionné de musique. C'est d'ailleurs pour ça que ce CV est inspiré d'un vinyle bien rétro.</p>
+      </div>
+      <aside class="credits" aria-label="Crédits"><span class="corner" aria-hidden="true"></span>
+        <div class="eyebrow">Crédits</div>
+        <dl>
+          <div class="cr"><dt>Studio</dt><i></i><dd>Suite Adobe, Pack Office, WordPress</dd></div>
+          <div class="cr"><dt>Code</dt><i></i><dd>HTML, CSS, PHP, JavaScript</dd></div>
+          <div class="cr"><dt>Graphisme</dt><i></i><dd>PAO, illustration, identité visuelle</dd></div>
+          <div class="cr"><dt>Effets</dt><i></i><dd>IA générative, Midjourney</dd></div>
+          <div class="cr"><dt>Prod.</dt><i></i><dd>Vidéo, création et rédaction de contenus</dd></div>
+          <div class="cr"><dt>Diffusion</dt><i></i><dd>Planification et gestion des réseaux sociaux</dd></div>
+          <div class="cr"><dt>Version EN</dt><i></i><dd>Anglais, TOEIC 2025<div class="toeic"><div class="bar" aria-hidden="true"><b></b></div><span>880/990</span></div></dd></div>
+          <div class="cr"><dt>Version ES</dt><i></i><dd>Espagnol, niveau B2</dd></div>
+          <div class="cr"><dt>Tournée</dt><i></i><dd>Permis B</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="disco-wrap" id="discographie" aria-labelledby="dg-h">
+  <div class="inner">
+    <div class="sec-head"><div><span class="tape">Formation</span><h2 id="dg-h">Discographie</h2></div><span class="mono">Formation · du plus récent au plus ancien</span></div>
+    <div class="disco">
+      <div class="rec"><div class="cover c1"><span class="lbl">ESUP · Rennes</span><span class="yr2">2025</span></div><div><b>Mastère Management opérationnel</b><span>Parcours Marketing/Communication · 2023–2025</span></div></div>
+      <div class="rec"><div class="cover c2"><span class="lbl">UCO · Arradon</span><span class="yr2">2021</span></div><div><b>Master Communication digitale</b><span>Communication, informatique et conception multimédia · 2019–2021</span><span>Création complète d'un blog, agence junior au sein de la promo</span></div></div>
+      <div class="rec"><div class="cover c3"><span class="lbl">UCO · Nantes</span><span class="yr2">2019</span></div><div><b>Licence Information-Communication</b><span>2018–2019</span></div></div>
+      <div class="rec"><div class="cover c4"><span class="lbl">St-Félix · Nantes</span><span class="yr2">2018</span></div><div><b>BTS Communication</b><span>2016–2018</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="bonus" id="bonus" aria-labelledby="bt-h">
+  <div class="inner">
+    <div class="sec-head"><div><span class="tape">Hors album</span><h2 id="bt-h">Bonus tracks</h2></div><span class="mono">Passions &amp; centres d'intérêt</span></div>
+    <ol class="bonus-list">
+      <li class="bt"><span class="no">Bonus 1</span><b>Musique</b><span class="role">Batterie · guitare</span><p>Elle m'aide à me concentrer, à me détendre et à me motiver. Je joue de la batterie et de la guitare, et je cherche sans cesse des artistes encore inconnus en France.</p></li>
+      <li class="bt"><span class="no">Bonus 2</span><b>Rugby</b><span class="role">15 ans · capitaine</span><p>Quinze ans de pratique, capitaine de toutes mes équipes jeunes. J'y ai appris à fédérer un groupe et à tenir le cap quand ça pousse en face.</p></li>
+      <li class="bt"><span class="no">Bonus 3</span><b>Technologie &amp; IA</b><span class="role">Veille</span><p>Je suis de près l'évolution des IA et je les utilise au quotidien, de la création de visuels à l'automatisation de contenus.</p></li>
+      
+      <li class="bt"><span class="no">Bonus 4</span><b>Histoire &amp; géo</b><span class="role">Culture</span><p>Comprendre d'où viennent les choses, et où elles se passent.</p></li>
+      <li class="bt bt-feature"><span class="no">Bonus 5 · en écriture</span><b>Une série comique post-apo</b><span class="role">Scénario · influences Kaamelott &amp; science-fiction</span><p>Depuis deux ans, j'écris une série : des survivants tentent d'organiser un camp après l'apocalypse. La plupart sont à côté de la plaque, et même avec des chefs pour les guider, leur survie est loin d'être acquise.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="booking" id="booking" aria-labelledby="bk-h">
+  <div class="inner">
+  <div class="ticket grid">
+    <div>
+      <div class="eyebrow">Booking · billet n° 029</div>
+      <h2 id="bk-h">On monte sur scène ensemble ?</h2>
+      <p>Disponible pour un poste en communication, en vente ou à la croisée des deux, dans le Pays d'Iroise, à Brest ou en télétravail.</p>
+    </div>
+    <div class="contact">
+      <div class="c-row"><span class="k">Email</span><span class="v" id="c-mail">yanncollin23@gmail.com</span><button class="copy" type="button" data-target="c-mail">Copier</button></div>
+      <div class="c-row"><span class="k">Tél.</span><span class="v" id="c-tel">06 49 82 88 69</span><button class="copy" type="button" data-target="c-tel">Copier</button></div>
+      <div class="c-row"><span class="k">Base</span><span class="v">Plougonvelin (29) · Permis B</span></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<footer>
+  <div class="inner">
+    <div class="barcode" aria-hidden="true"><i></i><span>3 029 2026 0029</span></div>
+    <div class="foot-r"><span class="mono">℗ © 2026 Yann Collin · Enregistré en Finistère</span><a href="#top">Retour face A</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hero=document.getElementById('hero'),btn=document.getElementById('play'),lbl=document.getElementById('playLabel');
+  var np=document.getElementById('nowplaying');
+  /* ── Son : player Spotify officiel piloté par le vinyle + petit craquement à la pose du diamant ── */
+  var C=null, started=false, A={ctx:null};
+  function needle(){
+    try{
+      if(!A.ctx){var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;A.ctx=new AC();}
+      if(A.ctx.state==='suspended')A.ctx.resume();
+      var sr=A.ctx.sampleRate,len=sr*2.6,b=A.ctx.createBuffer(1,len,sr),d=b.getChannelData(0);
+      for(var i=0;i<len;i++){var v=(Math.random()*2-1)*.006;if(Math.random()<.0005)v+=(Math.random()*2-1)*.5;if(i<sr*.25)v+=(Math.random()*2-1)*Math.exp(-i/(sr*.03))*.8;d[i]=v*Math.min(1,(len-i)/(sr*.8));}
+      var src=A.ctx.createBufferSource(),lp=A.ctx.createBiquadFilter(),g=A.ctx.createGain();src.buffer=b;lp.type='lowpass';lp.frequency.value=3200;g.gain.value=.8;src.connect(lp);lp.connect(g);g.connect(A.ctx.destination);src.start();
+    }catch(e){}
+  }
+  function startSound(){
+    needle();
+    if(!C) return;
+    setTimeout(function(){ if(!started){C.play();started=true;} else C.resume(); },600);
+  }
+  function stopSound(){ if(C) C.pause(); }
+  window.onSpotifyIframeApiReady=function(IFrameAPI){
+    IFrameAPI.createController(document.getElementById('spotify-player'),
+      {uri:'spotify:track:0jpWrtIu1w79yAOy0oJeiR',width:'100%',height:80},
+      function(ctrl){
+        C=ctrl;
+        ctrl.addListener('playback_update',function(e){
+          var on=!e.data.isPaused;
+          if(on) started=true;
+          if(on!==hero.classList.contains('playing')) setVisual(on);
+        });
+      });
+  };
+  function setVisual(on){
+    hero.classList.toggle('playing',on);
+    btn.setAttribute('aria-pressed',on);
+    lbl.textContent=on?'Arrêter le disque':'Poser le disque';
+    np.hidden=!on;
+  }
+  function setPlaying(on){
+    setVisual(on);
+    on?startSound():stopSound();
+  }
+  btn.addEventListener('click',function(){setPlaying(!hero.classList.contains('playing'));});
+  document.querySelectorAll('.track button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.parentElement,open=t.getAttribute('data-open')==='true';
+      t.setAttribute('data-open',!open);b.setAttribute('aria-expanded',!open);
+    });
+  });
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.dataset.target),txt=el.textContent;
+      function done(){b.textContent='Copié';setTimeout(function(){b.textContent='Copier';},1600);}
+      function fallback(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Sélectionné';setTimeout(function(){b.textContent='Copier';},1600);}
+      try{navigator.clipboard.writeText(txt).then(done,fallback);}catch(e){fallback();}
+    });
+  });
+})();
+</script>
+<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+</body>
+</html>
