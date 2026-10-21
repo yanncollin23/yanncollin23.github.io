@@ -270,8 +270,8 @@ footer .inner{display:flex;justify-content:space-between;align-items:flex-end;ga
           <button class="play" id="play" type="button" aria-pressed="false"><span class="ic"></span><span id="playLabel">Poser le disque</span></button>
           <a class="ghost" href="#booking">Me contacter</a>
         </div>
-        <div class="np" id="nowplaying" hidden><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>En lecture · « Since I've Been Loving You », Led Zeppelin</span></div>
-        <div class="player"><div id="spotify-player"><a href="https://open.spotify.com/track/1SDiiE3v2z89VxC3aVRKHQ" target="_blank" rel="noopener">Écouter « Since I've Been Loving You » sur Spotify</a></div></div>
+        <div class="np" id="nowplaying" hidden><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>En lecture · « Night Moves », Bob Seger</span></div>
+        <div class="player"><div id="spotify-player"><a href="https://open.spotify.com/track/0jpWrtIu1w79yAOy0oJeiR" target="_blank" rel="noopener">Écouter « Night Moves » de Bob Seger sur Spotify</a></div></div>
         <p class="sound-hint">Le disque joue via Spotify : extrait de 30 secondes sans compte, morceau complet si vous êtes connecté.</p>
       </div>
     </header>
@@ -412,7 +412,7 @@ footer .inner{display:flex;justify-content:space-between;align-items:flex-end;ga
   function stopSound(){ if(C) C.pause(); }
   window.onSpotifyIframeApiReady=function(IFrameAPI){
     IFrameAPI.createController(document.getElementById('spotify-player'),
-      {uri:'spotify:track:1SDiiE3v2z89VxC3aVRKHQ',width:'100%',height:80},
+      {uri:'spotify:track:0jpWrtIu1w79yAOy0oJeiR',width:'100%',height:80},
       function(ctrl){
         C=ctrl;
         ctrl.addListener('playback_update',function(e){
