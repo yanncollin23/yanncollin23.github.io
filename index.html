@@ -9,8 +9,8 @@
 <style>
 /* Layout: un album vinyle déplié — recto (pochette + disque), verso sombre (tracklist), livret (notes + crédits), discographie, bonus tracks, bande booking orange, code-barres */
 :root{
-  --bg:#EDEDE6; --paper:#F8F8F3; --ink:#15182B; --muted:#5C6074; --line:#D3D4CC;
-  --accent:#EE4F2C; --accent-ink:#FFF5EE; --teal:#2C47C4; --sun:#F4B63F;
+  --bg:#EDEDE6; --paper:#F8F8F3; --ink:#15182B; --muted:#474B5D; --line:#D3D4CC;
+  --accent:#C2381A; --accent-fill:#BE3517; --band-accent:#FF6A4A; --accent-ink:#FFF5EE; --teal:#2C47C4; --sun:#F4B63F;
   --band:#15182B; --band-fg:#EEEFF4; --band-muted:#9EA2B6; --band-line:#2F3348;
   --vinyl:#0E0F16; --groove:#232535;
   --f-display:"Shrikhand","Cooper Black",Georgia,serif;
@@ -20,12 +20,12 @@
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0F111B; --paper:#171A28; --ink:#ECEDF3; --muted:#9EA2B6; --line:#292D40;
-  --accent:#FF6243; --teal:#7690FF; --sun:#F6C25A;
+  --accent:#FF6A4A; --band-accent:#FF7A5C; --teal:#8DA2FF; --sun:#F6C25A;
   --band:#1A1E33; --band-fg:#EEEFF4; --band-muted:#A3A7BC; --band-line:#333850;
   --vinyl:#07080D; --groove:#1C1E2B; --grain-o:.018; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0F111B; --paper:#171A28; --ink:#ECEDF3; --muted:#9EA2B6; --line:#292D40;
-  --accent:#FF6243; --teal:#7690FF; --sun:#F6C25A;
+  --accent:#FF6A4A; --band-accent:#FF7A5C; --teal:#8DA2FF; --sun:#F6C25A;
   --band:#1A1E33; --band-fg:#EEEFF4; --band-muted:#A3A7BC; --band-line:#333850;
   --vinyl:#07080D; --groove:#1C1E2B; --grain-o:.018; color-scheme:dark}
 
@@ -86,12 +86,12 @@ a{color:inherit}
 .facts b{display:block;font-family:var(--f-body);font-stretch:62%;font-weight:900;font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
 .facts span{font-size:13px;color:var(--muted)}
 .actions{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
-.play{display:inline-flex;align-items:center;gap:12px;border:0;cursor:pointer;background:var(--accent);color:var(--accent-ink);
+.play{display:inline-flex;align-items:center;gap:12px;border:0;cursor:pointer;background:var(--accent-fill);color:var(--accent-ink);
   font:800 15px var(--f-body);font-stretch:110%;padding:14px 22px 14px 16px;border-radius:99px;box-shadow:0 10px 20px -12px rgba(238,79,44,.9);transition:translate .2s}
 .play:hover{translate:0 -2px}
 .play .ic{width:26px;height:26px;border-radius:50%;background:var(--accent-ink);display:grid;place-items:center}
-.play .ic::before{content:"";width:0;height:0;border-left:8px solid var(--accent);border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px}
-.playing .play .ic::before{width:8px;height:10px;border:0;border-left:3px solid var(--accent);border-right:3px solid var(--accent);margin:0}
+.play .ic::before{content:"";width:0;height:0;border-left:8px solid var(--accent-fill);border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px}
+.playing .play .ic::before{width:8px;height:10px;border:0;border-left:3px solid var(--accent-fill);border-right:3px solid var(--accent-fill);margin:0}
 .ghost{font:700 15px var(--f-body);text-decoration:none;border-bottom:2px solid var(--ink);padding-bottom:2px}
 .ghost:hover{border-color:var(--accent)}
 
@@ -114,7 +114,7 @@ a{color:inherit}
 .sides{display:grid;grid-template-columns:1fr 1fr;gap:64px}
 .side{min-width:0;position:relative}
 .side-head{display:flex;align-items:center;gap:18px;margin-bottom:10px}
-.side-letter{font-family:var(--f-display);font-size:88px;line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--accent);width:72px;flex:none}
+.side-letter{font-family:var(--f-display);font-size:88px;line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--band-accent);width:72px;flex:none}
 .side-head h3{font-family:var(--f-body);font-stretch:125%;font-weight:800;font-size:15px;letter-spacing:.2em;text-transform:uppercase}
 .side-head p{margin:2px 0 0;font-size:14px;color:var(--band-muted)}
 ol.tracks{list-style:none;margin:0;padding:0;border-top:1px solid var(--band-line)}
@@ -122,7 +122,7 @@ ol.tracks{list-style:none;margin:0;padding:0;border-top:1px solid var(--band-lin
 .track button{all:unset;cursor:pointer;box-sizing:border-box;display:grid;grid-template-columns:40px minmax(0,auto) minmax(16px,1fr) auto;gap:12px;align-items:baseline;width:100%;padding:16px 8px 16px 0;transition:background .2s,padding .2s}
 .track button:hover{background:rgba(255,255,255,.04);padding-left:8px}
 .track button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
-.no{font-family:var(--f-mono);color:var(--accent);font-size:13px}
+.no{font-family:var(--f-mono);color:var(--band-accent);font-size:13px;font-weight:500}
 .tt{font-weight:700;font-size:17px;line-height:1.3;min-width:0}
 .tt small{display:block;font-weight:400;font-size:14px;color:var(--band-muted);margin-top:2px}
 .lead{border-bottom:1px dotted var(--band-line);transform:translateY(-5px)}
@@ -131,10 +131,10 @@ ol.tracks{list-style:none;margin:0;padding:0;border-top:1px solid var(--band-lin
 .notes>div{overflow:hidden}
 .notes ul{margin:0;padding:0 0 18px 52px;list-style:none;display:grid;gap:6px;font-size:15px;color:var(--band-fg)}
 .notes li{position:relative;padding-left:16px}
-.notes li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.notes li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--band-accent)}
 .track[data-open="true"] .notes{grid-template-rows:1fr}
 .chev{display:inline-block;margin-left:8px;color:var(--band-muted);font-weight:400;transition:rotate .25s}
-.track[data-open="true"] .chev{rotate:45deg;color:var(--accent)}
+.track[data-open="true"] .chev{rotate:45deg;color:var(--band-accent)}
 
 /* ── LIVRET ─────────────────────────── */
 .livret{padding-block:88px}
@@ -164,18 +164,18 @@ ol.tracks{list-style:none;margin:0;padding:0;border-top:1px solid var(--band-lin
   box-shadow:0 18px 30px -22px rgba(0,0,0,.55);transition:translate .3s,rotate .3s}
 .rec:hover .cover{translate:0 -4px;rotate:-1.5deg}
 .cover .yr2{position:relative;z-index:1;font-family:var(--f-body);font-stretch:62%;font-weight:900;font-size:clamp(34px,4.6vw,52px);line-height:.85}
-.cover .lbl{position:relative;z-index:1;font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+.cover .lbl{position:relative;z-index:1;font-family:var(--f-mono);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase}
 .c1{background:#15182B;color:#F4B63F}
 .c1::before{content:"";position:absolute;inset:0;background:repeating-radial-gradient(circle at 100% 100%,transparent 0 10px,rgba(244,182,63,.25) 10px 12px)}
-.c2{background:#EE4F2C;color:#FFF5EE}
+.c2{background:#BE3517;color:#FFF5EE}
 .c2::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 14px,rgba(255,244,232,.14) 14px 28px)}
 .c3{background:#2C47C4;color:#FFF5EE}
 .c3::before{content:"";position:absolute;inset:0;background:conic-gradient(from 0deg at 50% 120%,rgba(255,255,255,.14) 0 10deg,transparent 10deg 20deg) ;background-size:100% 100%}
-.c3::after{content:"";position:absolute;left:50%;bottom:-30%;width:70%;aspect-ratio:1;translate:-50% 0;border-radius:50%;background:#F4B63F;opacity:.95}
+.c3::after{content:"";position:absolute;right:-28%;bottom:-28%;width:70%;aspect-ratio:1;border-radius:50%;background:#F4B63F;opacity:.95}
 .c4{background:#F4B63F;color:#15182B}
 .c4::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(21,24,43,.28) 1.4px,transparent 1.6px);background-size:12px 12px}
 .rec b{display:block;font-size:15px;line-height:1.3}
-.rec span{display:block;font-size:14px;color:var(--muted)}
+.rec span{display:block;font-size:14px;color:var(--ink);opacity:.85}
 
 /* ── BONUS TRACKS ───────────────────── */
 .bonus{padding-block:0 96px}
@@ -189,17 +189,17 @@ ol.tracks{list-style:none;margin:0;padding:0;border-top:1px solid var(--band-lin
 .bt-feature{grid-column:span 2;background:var(--band);color:var(--band-fg);border-color:var(--band)}
 .bt-feature .role{color:var(--band-muted)}
 .bt-wide{grid-column:1/-1}
-.bt-feature a{justify-self:start;margin-top:8px;font:700 14px var(--f-body);text-decoration:none;color:var(--band-fg);border-bottom:2px solid var(--accent);padding-bottom:2px}
+.bt-feature a{justify-self:start;margin-top:8px;font:700 14px var(--f-body);text-decoration:none;color:var(--band-fg);border-bottom:2px solid var(--band-accent);padding-bottom:2px}
 
 /* ── BOOKING ────────────────────────── */
-.booking{background:var(--accent);color:var(--accent-ink);padding-block:72px}
+.booking{background:var(--accent-fill);color:var(--accent-ink);padding-block:72px}
 .booking .grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:48px;align-items:center}
 .booking h2{font-family:var(--f-display);font-weight:400;font-size:clamp(40px,6vw,72px);line-height:.95}
 .booking p{margin:16px 0 0;max-width:44ch;font-size:17px}
-.booking .eyebrow{margin-bottom:14px;opacity:.85}
+.booking .eyebrow{margin-bottom:14px}
 .contact{display:grid;gap:10px}
 .c-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border:1px solid rgba(255,244,232,.45);padding:14px 16px}
-.c-row .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.8;width:52px}
+.c-row .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;width:52px}
 .c-row .v{font-weight:800;font-size:17px;user-select:all;min-width:0;overflow-wrap:anywhere;flex:1}
 .copy{border:0;background:var(--accent-ink);color:#C23A1C;font:600 12px var(--f-mono);padding:6px 12px;border-radius:99px;cursor:pointer}
 .copy:hover{background:#FFFFFF}
@@ -243,10 +243,10 @@ footer .inner{display:flex;justify-content:space-between;align-items:flex-end;ga
         <div class="disc">
           <svg viewBox="0 0 100 100">
             <defs><path id="ring" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"/></defs>
-            <circle cx="50" cy="50" r="50" fill="#EE4F2C"/>
+            <circle cx="50" cy="50" r="50" fill="#BE3517"/>
             <circle cx="50" cy="50" r="27" fill="none" stroke="#FFF4E8" stroke-opacity=".35" stroke-width=".6"/>
             <text font-family="DM Mono, monospace" font-size="7.4" letter-spacing="1.6" fill="#FFF4E8"><textPath href="#ring">YANN COLLIN · FACE A COMMUNICATION · FACE B TERRAIN ·</textPath></text>
-            <text x="50" y="57" text-anchor="middle" font-family="Shrikhand, Georgia, serif" font-size="20" fill="#15182B">YC</text>
+            <text x="50" y="57" text-anchor="middle" font-family="Shrikhand, Georgia, serif" font-size="20" fill="#F4B63F">YC</text>
             <circle cx="50" cy="50" r="2.4" fill="#131216"/>
           </svg>
         </div>
