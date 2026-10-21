@@ -308,9 +308,29 @@ footer{background:#0E0A08}
 .mini-card{background:#1F1E22;border:1px solid #38373C;padding:22px;display:grid;gap:10px;color:var(--ink);text-decoration:none}
 .mini-card:hover{border-color:var(--accent)}
 @media (max-width:820px){.works-grid{grid-template-columns:1fr}.works{padding-block:56px}}
+.screen-in video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shelf{margin-top:72px}
+.shelf-head h3{margin:0;font-family:var(--f-display);font-weight:900;font-size:clamp(30px,3vw,44px);line-height:.9;text-transform:uppercase}
+.posters{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;margin-top:22px}
+.pst,.idt{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:10px;align-content:start;min-width:0}
+.pst img{display:block;width:100%;aspect-ratio:707/1000;object-fit:cover;border:1px solid #3A2A20;box-shadow:0 20px 40px -24px rgba(0,0,0,.8);transition:translate .25s,rotate .25s}
+.pst:hover img{translate:0 -4px;rotate:-1deg}
+.pst:focus-visible img,.idt:focus-visible .idt-img{outline:2px solid var(--accent);outline-offset:3px}
+.pst>span,.idt>span:last-child{font-size:13px;line-height:1.35;color:var(--muted)}
+.pst b,.idt b{display:block;font-family:var(--f-display);font-weight:900;font-size:20px;line-height:1.05;text-transform:uppercase;color:var(--ink)}
+.idents{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:22px}
+.idt-img{display:grid;place-items:center;aspect-ratio:16/10;overflow:hidden;border:1px solid #3A2A20;transition:border-color .2s}
+.idt:hover .idt-img{border-color:var(--accent)}
+.idt-img.dark{background:#1F1E22}.idt-img.light{background:#EFEFEC}
+.idt-img.dark img{width:52%;height:auto}.idt-img.light img{width:100%;height:100%;object-fit:contain}
+.lightbox{border:0;padding:0;background:transparent;max-width:min(92vw,960px);max-height:94vh;overflow:visible}
+.lightbox::backdrop{background:rgba(10,7,5,.9)}
+.lightbox img{display:block;max-width:100%;max-height:88vh;margin:auto}
+.lb-close{position:absolute;top:-14px;right:-14px;width:44px;height:44px;border-radius:50%;border:0;background:var(--accent);color:#1E1511;font-size:28px;line-height:1;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.5)}
+@media (max-width:820px){.posters{grid-template-columns:repeat(2,minmax(0,1fr))}.posters .pst:first-child{grid-column:1/-1}.idents{grid-template-columns:1fr}.lb-close{top:6px;right:6px}}
 
 .ills{margin-top:72px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.6fr);gap:32px;align-items:start}
-.ills-head h3{margin:0;font-family:var(--f-display);font-weight:900;font-size:clamp(30px,3vw,44px);line-height:.9;text-transform:uppercase;overflow-wrap:break-word}
+.ills-head h3{margin:0;font-family:var(--f-display);font-weight:900;font-size:clamp(28px,2.6vw,40px);line-height:.9;text-transform:uppercase;overflow-wrap:normal;hyphens:none}
 .ills-head{min-width:0}
 .ills-head p{margin:12px 0 0;color:#E6D9C4;max-width:32ch}
 .ills-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
@@ -457,16 +477,35 @@ footer{background:#0E0A08}
         <div class="roles"><span>Concept</span><span>Recherches</span><span>Écriture</span><span>Tournage</span><span>Montage</span><span>Diffusion</span></div>
         <span class="go">Voir l'épisode sur YouTube</span>
       </a>
-      <a class="work poster" href="affiche-noel.jpg" target="_blank" rel="noopener">
-        <div class="poster-frame"><img src="affiche-noel.jpg" alt="Affiche de l'arbre de Noël du CSE d'Alstef Group : un Père Noël rock en lunettes de soleil, vendredi 13 décembre à L'Antichambre, Mordelles" width="779" height="1100" loading="lazy"></div>
-        <span class="meta">Alstef Group · CSE · décembre 2024</span>
-        <h3>Affiche de l'arbre de Noël</h3>
-        <p>Affiche de l'arbre de Noël organisé par le CSE, avec un groupe de rock sur scène. Un Père Noël rockeur pour donner le ton de la soirée.</p>
-        <div class="roles"><span>Concept</span><span>Direction artistique</span><span>Mise en page</span></div>
-        <span class="go">Voir l'affiche en grand</span>
-      </a>
+      <div class="work">
+        <div class="screen"><div class="screen-in"><video src="dame-panda.mp4" poster="dame-panda-poster.jpg" autoplay muted loop playsinline aria-label="Animation de la gamme de bières sans alcool L'Embardée Dame Panda"></video></div><div class="screen-bar"><span>MOTION · PACKAGING</span><span>EN COURS</span></div></div>
+        <span class="meta">Projet de design graphique · en cours</span>
+        <h3>L'Embardée · Dame Panda</h3>
+        <p>Identité et packaging d'une gamme de bières sans alcool : étiquettes, déclinaisons de couleurs, cartons et animation de lancement.</p>
+        <div class="roles"><span>Identité</span><span>Packaging</span><span>Déclinaisons</span><span>Motion</span></div>
+      </div>
     </div>
-    
+
+    <div class="shelf">
+      <div class="shelf-head"><span class="tape">Affiches</span><h3>Com interne &amp; événements</h3></div>
+      <div class="posters">
+        <button class="pst" type="button" data-full="affiche-noel.jpg"><img src="affiche-noel.jpg" alt="Affiche de l'arbre de Noël du CSE d'Alstef Group : un Père Noël rockeur en lunettes de soleil" loading="lazy"><span><b>Arbre de Noël</b>Alstef Group · CSE · 2024</span></button>
+        <button class="pst" type="button" data-full="pinkday.jpg"><img src="pinkday.jpg" alt="Affiche Pink Day d'Alstef Group contre le cancer du sein : une femme en robe rose dans un paysage brumeux" loading="lazy"><span><b>Pink Day</b>Alstef Group · Octobre rose 2024</span></button>
+        <button class="pst" type="button" data-full="cochon-grille.jpg"><img src="cochon-grille.jpg" alt="Affiche du cochon grillé pour les 50 ans d'Alstef Mobile Robotics : un cochon en lunettes de soleil, cocktail à la main" loading="lazy"><span><b>Cochon grillé</b>50 ans d'Alstef Mobile Robotics · 2025</span></button>
+        <button class="pst" type="button" data-full="gala-esup-bleu.jpg"><img src="gala-esup-bleu.jpg" alt="Affiche du gala ESUP au Roazhon Park : une fleur bleue et dorée sur fond nuit" loading="lazy"><span><b>Gala ESUP</b>Roazhon Park · proposition 1</span></button>
+        <button class="pst" type="button" data-full="gala-esup-rouge.jpg"><img src="gala-esup-rouge.jpg" alt="Affiche du gala ESUP 2024 : une femme en robe rouge sur un escalier bordé de fleurs rouges" loading="lazy"><span><b>Gala ESUP</b>Roazhon Park · proposition 2</span></button>
+      </div>
+    </div>
+
+    <div class="shelf">
+      <div class="shelf-head"><span class="tape">Identités</span><h3>Logos &amp; packaging</h3></div>
+      <div class="idents">
+        <button class="idt" type="button" data-full="dirty-diamond.png"><span class="idt-img dark"><img src="dirty-diamond.png" alt="Logo Dirty Diamond Vinyl Tavern : lettrage blanc et rouge dans un rond noir" loading="lazy"></span><span><b>Dirty Diamond · Vinyl Tavern</b>Logo pour un projet de bar à vinyles</span></button>
+        <button class="idt" type="button" data-full="embardee.jpg"><span class="idt-img light"><img src="embardee.jpg" alt="Trois bouteilles de bière L'Embardée avec leur étiquette bleue Dame Panda" loading="lazy"></span><span><b>L'Embardée · étiquette</b>Bière sans alcool 0,0 % · maquette</span></button>
+      </div>
+    </div>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Visuel en grand"><button class="lb-close" type="button" aria-label="Fermer">×</button><img src="" alt=""></dialog>
 
     <div class="ills">
       <div class="ills-head"><span class="tape">Face cachée</span><h3>Illustrations</h3><p>Des aplats de couleur, entre surf, glisse et côte bretonne : mon terrain de jeu graphique.</p></div>
@@ -575,6 +614,17 @@ footer{background:#0E0A08}
       t.setAttribute('data-open',!open);b.setAttribute('aria-expanded',!open);
     });
   });
+  var lb=document.getElementById('lightbox');
+  if(lb){
+    var lbi=lb.querySelector('img');
+    document.querySelectorAll('[data-full]').forEach(function(b){
+      b.addEventListener('click',function(){
+        if(typeof lb.showModal!=='function'){window.open(b.dataset.full,'_blank');return;}
+        lbi.src=b.dataset.full; var im=b.querySelector('img'); lbi.alt=im?im.alt:''; lb.showModal();
+      });
+    });
+    lb.addEventListener('click',function(e){ if(e.target===lb||e.target.classList.contains('lb-close')) lb.close(); });
+  }
   document.querySelectorAll('.copy').forEach(function(b){
     b.addEventListener('click',function(){
       var el=document.getElementById(b.dataset.target),txt=el.textContent;
